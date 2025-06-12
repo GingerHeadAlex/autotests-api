@@ -2,8 +2,7 @@ from concurrent import futures  # Импорт пула потоков для а
 
 import grpc  # Импорт библиотеки gRPC
 
-import course_service_pb2  # Сгенерированные классы для работы с gRPC-сообщениями
-import course_service_pb2_grpc  # Сгенерированный класс для работы с сервисом
+from gRPC import course_service_pb2, course_service_pb2_grpc
 
 
 # Реализация gRPC-сервиса
@@ -15,7 +14,7 @@ class CourseServiceServicer(course_service_pb2_grpc.CourseServiceServicer):
         print(f'Получен запрос к методу GetCourse')
 
         # Формируем и возвращаем ответное сообщение
-        return course_service_pb2.GetCourseResponse(course_id = request.course_id, title = "Автотесты API", description = "Будем изучать написание API автотестов")
+        return course_service_pb2.GetCourseResponse(course_id = request.course_id, title ="Автотесты API", description ="Будем изучать написание API автотестов")
 
 
 # Функция для запуска gRPC-сервера
