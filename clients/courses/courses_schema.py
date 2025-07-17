@@ -1,5 +1,5 @@
 import uuid
-from pydantic import BaseModel, Field, EmailStr, ConfigDict
+from pydantic import BaseModel, Field, ConfigDict
 from clients.users.users_schema import UserSchema
 from clients.files.files_schema import FileSchema
 
@@ -22,7 +22,7 @@ class GetCoursesQuerySchema(BaseModel):
     """
     Описание структуры запроса на получение списка курсов.
     """
-    userId: str
+    user_id: str = Field(alias="userId")
 
 
 class CreateCourseRequestSchema(BaseModel):

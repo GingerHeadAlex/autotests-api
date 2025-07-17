@@ -1,8 +1,7 @@
-from typing import TypedDict
 from httpx import Response
 from clients.api_client import APIClient
 from clients.private_http_builder import AuthenticationUserSchema, get_private_http_client
-from clients.courses.courses_schema import CourseSchema, GetCoursesQuerySchema,\
+from clients.courses.courses_schema import GetCoursesQuerySchema,\
     CreateCourseRequestSchema, CreateCourseResponseSchema, UpdateCourseRequestSchema
 
 
