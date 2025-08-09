@@ -34,10 +34,6 @@ def test_get_user_me(
         authentication_client: AuthenticationClient,
         private_users_client: PrivateUsersClient
 ):
-    # Запрос на логин
-    request_login = LoginRequestSchema(email=function_user.email, password=function_user.password)
-    # Выполняем логин
-    authentication_client.login_api(request_login)
     # Запрашиваем текущего пользователя
     response_user_me = private_users_client.get_user_me_api()
     response_user_me_data = GetUserResponseSchema.model_validate_json(response_user_me.text)
