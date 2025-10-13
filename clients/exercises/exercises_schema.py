@@ -40,7 +40,7 @@ class UpdateExerciseRequestSchema(BaseModel):
     estimated_time: str | None = Field(alias="estimatedTime", default_factory=fake.estimated_time)
 
 
-class ExerciseSchema(BaseModel):
+class ExercisesSchema(BaseModel):
     """
     Описание структуры задания.
     """
@@ -60,8 +60,8 @@ class ExerciseResponseSchema(BaseModel):
     """
     Описание структуры ответа с заданием (обертка вокруг ExerciseSchema)
     """
-    exercise: ExerciseSchema
+    exercise: ExercisesSchema
 
 
 class GetExercisesResponseSchema(BaseModel):
-    exercises: list[ExerciseSchema]
+    exercises: list[ExercisesSchema]
