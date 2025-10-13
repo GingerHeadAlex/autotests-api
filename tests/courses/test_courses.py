@@ -53,7 +53,7 @@ class TestCourses:
         validate_json_schema(response.json(), response_data.model_json_schema())
 
     def test_create_course(self, courses_client: CoursesClient, function_file: FileFixture, function_user: UserFixture):
-        request = CreateCourseRequestSchema(preview_file_id = function_file.response.file.id, created_by_user_id = function_user.response.user.id,)
+        request = CreateCourseRequestSchema(preview_file_id = function_file.response.file.id, created_by_user_id = function_user.response.user.id)
         # Отправляем запрос на создание курса
         response = courses_client.create_course_api(request)
         # Преобразуем JSON-ответ в объект схемы
