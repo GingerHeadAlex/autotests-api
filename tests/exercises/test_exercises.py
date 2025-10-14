@@ -10,8 +10,8 @@ from clients.exercises.exercises_schema import CreateExerciseRequestSchema, Exer
 from tools.assertions.base import assert_status_code
 from tools.assertions.schema import validate_json_schema
 from tools.assertions.exercises import assert_create_exercise_response, assert_get_exercise_response, \
-    assert_update_exercise_response
-
+    assert_update_exercise_response, assert_exercise_not_found_response
+from clients.errors_schema import InternalErrorResponseSchema
 
 @pytest.mark.exercises
 @pytest.mark.regression
@@ -51,7 +51,8 @@ class TestExercises:
     def test_update_exercise(
             self,
             exercises_client: ExercisesClient,
-            function_exercise: ExerciseFixture):
+            function_exercise: ExerciseFixture
+    ):
         request = UpdateExerciseRequestSchema()
         response = exercises_client.update_exercise_api(function_exercise.response.exercise.id, request)
         # Преобразуем JSON-ответ в объект схемы
@@ -61,3 +62,22 @@ class TestExercises:
         assert_update_exercise_response(request,response_data)
         # Валидируем JSON-схему ответа
         validate_json_schema(response.json(), response_data.model_json_schema())
+
+    def test_delete_exercise(
+            self,
+            exercises_client: ExercisesClient,
+            function_exercise: ExerciseFixture
+    ):
+        # Отправляем запрос на удаление задания курса
+        delete_response = exercises_client.delete_exercise_api(function_exercise.response.exercise.id)
+        # Проверяем статус-код ответа
+        assert_status_code(delete_response.status_code, HTTPStatus.OK)
+        # Пытаемся получить удаленное задание
+        get_response = exercises_client.get_exercise_api(function_exercise.response.exercise.id)
+        get_response_data = InternalErrorResponseSchema.model_validate_json(get_response.text)
+        # Проверяем, что сервер вернул 404 Not Found
+        assert_status_code(get_response.status_code, HTTPStatus.NOT_FOUND)
+        # Проверяем, что в ответе содержится ошибка "Exercise not found"
+        assert_exercise_not_found_response(get_response_data)
+        # Валидируем JSON-схему ответа
+        validate_json_schema(get_response.json(), get_response_data.model_json_schema())
