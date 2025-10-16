@@ -2,6 +2,22 @@ from pydantic import BaseModel, Field, ConfigDict
 from tools.fakers import fake
 
 
+class ExercisesSchema(BaseModel):
+    """
+    Описание структуры задания.
+    """
+    model_config = ConfigDict(populate_by_name=True)
+
+    id: str
+    title: str
+    course_id: str = Field(alias="courseId")
+    max_score: int = Field(alias="maxScore")
+    min_score: int = Field(alias="minScore")
+    order_index: int = Field(alias="orderIndex")
+    description: str
+    estimated_time: str = Field(alias="estimatedTime")
+
+
 class GetExercisesQuerySchema(BaseModel):
     """
     Описание структуры запроса на получение списка заданий.
@@ -9,6 +25,10 @@ class GetExercisesQuerySchema(BaseModel):
     model_config = ConfigDict(populate_by_name=True)
 
     course_id: str = Field(alias="courseId")
+
+
+class GetExercisesResponseSchema(BaseModel):
+    exercises: list[ExercisesSchema]
 
 
 class CreateExerciseRequestSchema(BaseModel):
@@ -26,6 +46,20 @@ class CreateExerciseRequestSchema(BaseModel):
     estimated_time: str = Field(alias="estimatedTime", default_factory=fake.estimated_time)
 
 
+class CreateExerciseResponseSchema(BaseModel):
+    """
+    Описание структуры ответа на получение задания.
+    """
+    exercise: ExercisesSchema
+
+
+class GetExerciseResponseSchema(BaseModel):
+    """
+    Описание структуры ответа получения задания.
+    """
+    exercise: ExercisesSchema
+
+
 class UpdateExerciseRequestSchema(BaseModel):
     """
     Описание структуры запроса на обновление задания.
@@ -40,35 +74,8 @@ class UpdateExerciseRequestSchema(BaseModel):
     estimated_time: str | None = Field(alias="estimatedTime", default_factory=fake.estimated_time)
 
 
-class ExercisesSchema(BaseModel):
-    """
-    Описание структуры задания.
-    """
-    model_config = ConfigDict(populate_by_name=True)
-
-    id: str
-    title: str
-    course_id: str = Field(alias="courseId")
-    max_score: int = Field(alias="maxScore")
-    min_score: int = Field(alias="minScore")
-    order_index: int = Field(alias="orderIndex")
-    description: str
-    estimated_time: str = Field(alias="estimatedTime")
-
-
 class UpdateExerciseResponseSchema(BaseModel):
     """
     Описание структуры ответа обновления задания курса.
     """
     exercise: ExercisesSchema
-
-
-class ExerciseResponseSchema(BaseModel):
-    """
-    Описание структуры ответа с заданием (обертка вокруг ExerciseSchema)
-    """
-    exercise: ExercisesSchema
-
-
-class GetExercisesResponseSchema(BaseModel):
-    exercises: list[ExercisesSchema]

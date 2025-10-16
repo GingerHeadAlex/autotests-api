@@ -3,13 +3,13 @@ from pydantic import BaseModel
 
 from clients.exercises.exercises_client import ExercisesClient, get_exercises_client
 from fixtures.users import UserFixture
-from clients.exercises.exercises_schema import CreateExerciseRequestSchema, ExerciseResponseSchema
+from clients.exercises.exercises_schema import CreateExerciseRequestSchema, CreateExerciseResponseSchema
 from fixtures.courses import function_course
 from fixtures.courses import CourseFixture
 
 class ExerciseFixture(BaseModel):
     request: CreateExerciseRequestSchema
-    response: ExerciseResponseSchema
+    response: CreateExerciseResponseSchema
 
 @pytest.fixture
 def exercises_client(function_user: UserFixture) -> ExercisesClient:

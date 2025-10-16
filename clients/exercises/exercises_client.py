@@ -4,7 +4,8 @@ from httpx import Response
 from clients.api_client import APIClient
 from clients.private_http_builder import AuthenticationUserSchema, get_private_http_client
 from clients.exercises.exercises_schema import GetExercisesQuerySchema, CreateExerciseRequestSchema,\
-UpdateExerciseRequestSchema, GetExercisesResponseSchema, ExerciseResponseSchema
+UpdateExerciseRequestSchema, GetExercisesResponseSchema, UpdateExerciseResponseSchema, GetExerciseResponseSchema, \
+    CreateExerciseResponseSchema
 
 
 class ExercisesClient(APIClient):
@@ -62,17 +63,17 @@ class ExercisesClient(APIClient):
         response = self.get_exercises_api(query)
         return GetExercisesResponseSchema.model_validate_json(response.text)
 
-    def get_exercise(self, exercise_id) -> ExerciseResponseSchema:
+    def get_exercise(self, exercise_id) -> GetExerciseResponseSchema:
         response = self.get_exercise_api(exercise_id)
-        return ExerciseResponseSchema.model_validate_json(response.text)
+        return GetExerciseResponseSchema.model_validate_json(response.text)
 
-    def create_exercise(self, request: CreateExerciseRequestSchema) -> ExerciseResponseSchema:
+    def create_exercise(self, request: CreateExerciseRequestSchema) -> CreateExerciseResponseSchema:
         response = self.create_exercise_api(request)
-        return ExerciseResponseSchema.model_validate_json(response.text)
+        return CreateExerciseResponseSchema.model_validate_json(response.text)
 
-    def update_exercise(self, exercise_id: str, request: UpdateExerciseRequestSchema) -> ExerciseResponseSchema:
+    def update_exercise(self, exercise_id: str, request: UpdateExerciseRequestSchema) -> UpdateExerciseResponseSchema:
         response = self.update_exercise_api(exercise_id, request)
-        return ExerciseResponseSchema.model_validate_json(response.text)
+        return UpdateExerciseResponseSchema.model_validate_json(response.text)
 
 def get_exercises_client(user: AuthenticationUserSchema) -> ExercisesClient:
     """
