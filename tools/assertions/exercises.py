@@ -45,7 +45,7 @@ def assert_exercise(
 
 def assert_get_exercise_response(
         get_exercise_response: GetExerciseResponseSchema,
-        create_exercise_response: GetExerciseResponseSchema
+        create_exercise_response: CreateExerciseResponseSchema
 ):
     """
     Проверяет, что ответ на получение упражнения соответствует ответу на его создание.
