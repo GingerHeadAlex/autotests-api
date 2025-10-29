@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI1LTEwLTI5VDExOjMyOjQwLjk0MTg0OCIsInVzZXJfaWQiOiJjOGUwMzkzZC1lY2I4LTQxZDUtYWFkMS02OTkyNTNkYTBhYTgifQ.ZSedF2zy7U6rrcwHgWPOLpQVYBothtj37XFEvNvbCek' \
+  -H 'content-length: 422' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Actually development option sure.","maxScore":84,"minScore":30,"description":"Ahead note choice rest.\nHundred machine student argue. Democratic process reduce fall. Might probably bag itself. Product in event box oil.\nEvent eye visit sometimes. Finish start modern make.","estimatedTime":"7 weeks","previewFileId":"827fb534-9687-4085-a900-c3ee40ad86cf","createdByUserId":"c8e0393d-ecb8-41d5-aad1-699253da0aa8"}'

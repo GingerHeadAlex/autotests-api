@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI1LTEwLTI5VDExOjMyOjM5LjcxMjk4NiIsInVzZXJfaWQiOiI4ZmNmZDMwZS1kYTQ1LTQxZDctODFmYy04ZDg5ZDJjY2U2YWUifQ.bBf6jmrYBg54p5fziKwuux-mE1G5OLMzH3EQGbmTFl0' \
+  -H 'content-length: 328' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Fund control against red.","maxScore":76,"minScore":3,"description":"Mean less or significant positive. Beat mother every issue speak cost technology. Identify adult reflect kid.","estimatedTime":"4 weeks","previewFileId":"8b0de5be-1c72-49f4-bbf4-f3d64c77877b","createdByUserId":"8fcfd30e-da45-41d7-81fc-8d89d2cce6ae"}'

@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/exercises' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI1LTEwLTI5VDExOjMyOjQwLjI5ODUzMyIsInVzZXJfaWQiOiI3ZWI5OTY3Zi0wNjdiLTRlMjItYWE4ZC1jOTkyZDBmNzNjMDcifQ.E-0WlIktuZbqdYtGt1J0MEZGfuNW4p-yHxhi998_itw' \
+  -H 'content-length: 373' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Loss ok administration word.","courseId":"83b1bc9a-64f6-4ed0-95c2-c3dbaffaf94b","maxScore":85,"minScore":12,"orderIndex":21,"description":"Find few yet everyone. Person develop now ok front data sit source.\nForget chair around increase present drop guy. Member drive east she fast. Knowledge later positive idea center apply question.","estimatedTime":"9 weeks"}'

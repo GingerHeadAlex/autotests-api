@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI1LTEwLTI5VDExOjMyOjQxLjUyOTUzNiIsInVzZXJfaWQiOiJkMzA1Y2U4Zi1iYmFjLTQ3MDgtOThmZC1jNGQ1YTE1OGFjZDEifQ.dYfEz5LwyZK18q2OXHLON02IItPrZBYfWYF0PGFs0L4' \
+  -H 'content-length: 336' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Mind board special serious.","maxScore":53,"minScore":2,"description":"Once century anyone word state in trouble. Generation one put team race. Where return plan live of create industry.","estimatedTime":"3 weeks","previewFileId":"f905aaa3-0612-4199-85bf-bd9945e1fa34","createdByUserId":"d305ce8f-bbac-4708-98fd-c4d5a158acd1"}'

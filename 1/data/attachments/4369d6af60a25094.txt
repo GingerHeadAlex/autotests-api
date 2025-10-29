@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI1LTEwLTI5VDExOjMyOjM3LjMxNjY4OSIsInVzZXJfaWQiOiIzNjBjMjVkZS02ZGJmLTQ3YzEtYWM1OC01OTUyNjFlYzIzNGIifQ.ZCieoecql4HRvhZbxLBFE9S1ocLMf29Rek5rW75ktnI' \
+  -H 'content-length: 333' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Clearly American check.","maxScore":59,"minScore":20,"description":"Bit require without respond. Green raise against single. Thousand try hit debate.\nMain information scientist half.","estimatedTime":"6 weeks","previewFileId":"6fcacf78-2f1e-4c7b-be31-c06d76362489","createdByUserId":"360c25de-6dbf-47c1-ac58-595261ec234b"}'

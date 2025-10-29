@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI1LTEwLTI5VDExOjMyOjM3LjkwMTk5OCIsInVzZXJfaWQiOiJhOTdkMTliMy04MWM2LTRiOGItOTA5OC0zYWU1ZjM1OWUxOWMifQ.VNq5E6ZyHajnHFN0F-zZwapkRbsVtQgEFWEZdozhRto' \
+  -H 'content-length: 424' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Much positive story it player rather.","maxScore":51,"minScore":16,"description":"Against size artist word citizen region say law. Fill set whom build attention item particular.\nSix onto magazine line high among be crime. Newspaper buy wall you. Or home situation practice.","estimatedTime":"9 weeks","previewFileId":"67c8d09a-2728-4ecf-8dba-dbb51e0b6502","createdByUserId":"a97d19b3-81c6-4b8b-9098-3ae5f359e19c"}'

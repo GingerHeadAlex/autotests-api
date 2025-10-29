@@ -1,0 +1,11 @@
+curl -X 'PATCH' \
+  'http://localhost:8000/api/v1/exercises/388828d7-3b09-4170-9a13-d0db89865007' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI1LTEwLTI5VDExOjMyOjM5LjcxMjk4NiIsInVzZXJfaWQiOiI4ZmNmZDMwZS1kYTQ1LTQxZDctODFmYy04ZDg5ZDJjY2U2YWUifQ.bBf6jmrYBg54p5fziKwuux-mE1G5OLMzH3EQGbmTFl0' \
+  -H 'content-length: 272' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Else never hair establish.","maxScore":52,"minScore":29,"orderIndex":85,"description":"Move industry law with enter far game. Why forget feel personal wonder sort.\nAlone down ever but woman deep thousand. Mind candidate score method.","estimatedTime":"4 weeks"}'

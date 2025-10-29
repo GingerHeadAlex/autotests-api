@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI1LTEwLTI5VDExOjMyOjM5LjEzMTMwMSIsInVzZXJfaWQiOiIyOTc2ZWM2ZC00ZWMxLTQ0N2QtODQ5ZS02YWZmNmQxMTg3OTYifQ.R-5XWTrJwWWia2S7XX3r_wV7AOyXNWpZaIY1uHFUWLg' \
+  -H 'content-length: 398' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Attorney discover ready happy but option.","maxScore":54,"minScore":19,"description":"Job medical thought church. Population step large rise. Entire every until look. And force close worry situation.\nOur than that day. Course share sign certainly.","estimatedTime":"5 weeks","previewFileId":"2d7e631f-30d6-4fd6-b227-440d2a830de9","createdByUserId":"2976ec6d-4ec1-447d-849e-6aff6d118796"}'
